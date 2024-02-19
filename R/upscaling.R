@@ -112,7 +112,7 @@
 upscale_typings <- function(filepath,
                             typings,
                             loci_input = c(
-                              "A", "B",
+                              "A", "B", "C",
                               "DRB1", "DRB.", "DQB1"
                             ),
                             loci_output = c(
