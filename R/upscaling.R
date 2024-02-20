@@ -28,7 +28,7 @@
 #'
 #' - Geffard et. al., Easy-HLA: a validated web application suite to reveal the
 #'   full details of HLA typing, _Bioinformatics, Volume 36, Issue 7_, April
-#'   2020, Pages 2157–2164, <https://doi.org/10.1093/bioinformatics/btz875>
+#'   2020, Pages 2157-2164, <https://doi.org/10.1093/bioinformatics/btz875>
 #' - Madbouly, A., Gragert, L., Freeman, J., Leahy, N., Gourraud, P.-.-A.,
 #'   Hollenbach, J.A., Kamoun, M., Fernandez-Vina, M. and Maiers, M. (2014),
 #'   Validation of statistical imputation of allele-level multilocus phased
@@ -123,7 +123,10 @@ upscale_typings <- function(filepath,
                             n_haplos = NULL,
                             n_genos = 1,
                             as_list = FALSE) {
-  loci_input <- rlang::arg_match(loci_input, multiple = TRUE)
+  loci_input <- rlang::arg_match(loci_input, c(
+    "A", "B", "C",
+    "DRB1", "DRB.", "DQB1"
+  ), multiple = TRUE)
   loci_output <- rlang::arg_match(loci_output, multiple = TRUE)
   check_number_whole(n_genos)
 
